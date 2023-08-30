@@ -1,0 +1,568 @@
+Report As screen:
+    BackgroundImage: =
+    Fill: =RGBA(255, 255, 255, 1)
+    ImagePosition: =ImagePosition.Center
+
+    Rectangle2 As rectangle:
+        BorderColor: =RGBA(99, 139, 44, 1)
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =59
+        Width: =1114
+        X: =198
+        Y: =18
+        ZIndex: =1
+
+    Label17 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Bold
+        Size: =20
+        Text: ="Report"
+        X: =656
+        Y: =27
+        ZIndex: =2
+
+    Rectangle1_2 As rectangle:
+        BorderThickness: =0.2
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =768
+        Width: =153
+        ZIndex: =3
+
+    Button1_2 As button:
+        BorderThickness: =0
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =51
+        OnSelect: =Navigate('New Request Screen')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =146
+        X: =3.457
+        Y: =157
+        ZIndex: =4
+
+    Button2_1 As button:
+        BorderThickness: =0
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =50
+        OnSelect: =Navigate('HOD Dashboard',ScreenTransition.Cover)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =150
+        Y: =210
+        ZIndex: =5
+
+    Label1_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(116, 116, 116, 1)
+        Height: =28
+        OnSelect: =Navigate('New Request Screen')
+        Size: =10
+        Text: ="New Request"
+        Width: =109
+        X: =35
+        Y: =169
+        ZIndex: =6
+
+    Label2_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        Height: =19
+        OnSelect: =Navigate('HOD Dashboard',ScreenTransition.CoverRight)
+        Size: =10
+        Text: ="HOD Dashboard"
+        Width: =126
+        X: =29
+        Y: =226
+        ZIndex: =7
+
+    Button3_1 As button:
+        BorderThickness: =0
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =50
+        OnSelect: =Navigate('MD Dashboard')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =150
+        Y: =312
+        ZIndex: =8
+
+    Button2_4 As button:
+        BorderThickness: =0
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =50
+        OnSelect: =Navigate('HR Dashboard',ScreenTransition.Cover)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =150
+        Y: =261
+        ZIndex: =9
+
+    Label2_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(116, 116, 116, 1)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        Height: =31
+        OnSelect: =Navigate('HR Dashboard',ScreenTransition.Cover)
+        Size: =10
+        Text: ="H.R Dashboard"
+        Width: =110
+        X: =38
+        Y: =273
+        ZIndex: =10
+
+    Label8_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(116, 116, 116, 1)
+        Height: =34
+        OnSelect: =Navigate('MD Dashboard',ScreenTransition.UnCover)
+        Size: =9
+        Text: ="Managing Director Dashboard"
+        Width: =122
+        X: =30
+        Y: =323
+        ZIndex: =11
+
+    Icon1_1 As icon.AddLibrary:
+        Height: =50
+        Icon: =Icon.AddLibrary
+        OnSelect: =Navigate('New Request Screen')
+        Width: =25
+        X: =9
+        Y: =158
+        ZIndex: =12
+
+    Icon3_1 As icon.People:
+        Height: =30
+        Icon: =Icon.People
+        Width: =25
+        X: =9
+        Y: =220
+        ZIndex: =13
+
+    Icon4_1 As icon.Person:
+        Height: =30
+        Icon: =Icon.Person
+        Width: =25
+        X: =10
+        Y: =270
+        ZIndex: =14
+
+    Button4_1 As button:
+        BorderThickness: =0
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =50
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =150
+        Y: =363
+        ZIndex: =15
+
+    Label3_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(116, 116, 116, 1)
+        Height: =20
+        OnSelect: =Navigate('Past Requests',ScreenTransition.Fade)
+        Size: =10
+        Text: ="Past Requests"
+        Width: =100
+        X: =36
+        Y: =376
+        ZIndex: =16
+
+    Button5_1 As button:
+        BorderThickness: =0
+        Color: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(106, 190, 40, 1)
+        Height: =50
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =150
+        Y: =414
+        ZIndex: =17
+
+    Icon8_1 As icon.DocumentwithContent:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =30
+        Icon: =Icon.DocumentWithContent
+        Width: =25
+        X: =10
+        Y: =423
+        ZIndex: =18
+
+    Label5_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =33
+        Size: =10
+        Text: ="Report"
+        Width: =58
+        X: =55
+        Y: =422
+        ZIndex: =19
+
+    Image5 As image:
+        Height: =150
+        Image: =images
+        Width: =152
+        ZIndex: =20
+
+    Icon7_1 As icon.CalendarBlank:
+        Height: =30
+        Icon: =Icon.CalendarBlank
+        Width: =20
+        X: =11
+        Y: =371
+        ZIndex: =21
+
+    Icon2_1 As icon.CheckBadge:
+        Height: =30
+        Icon: =Icon.CheckBadge
+        Width: =20
+        X: =11
+        Y: =323
+        ZIndex: =22
+
+    Label9 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =25
+        Text: |
+            =Switch(Month(Today()),
+                1, "January",
+                2, "February",
+                3, "March",
+                4, "April",
+                5, "May",
+                6, "June",
+                7, "July",
+                8, "August",
+                9, "September",
+                10, "October",
+                11, "November",
+                12, "December"
+            )
+        X: =223
+        Y: =97
+        ZIndex: =23
+
+    Button7 As button:
+        BorderColor: =ColorFade(Color.Green, -0%)
+        Fill: =RGBA(106, 190, 40, 1)
+        Height: =320
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =250
+        X: =222
+        Y: =162
+        ZIndex: =24
+
+    Label13 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =83
+        Size: =16
+        Text: |-
+            ="Total
+             requests made"
+        Width: =288
+        X: =198
+        Y: =407
+        ZIndex: =25
+
+    Label6 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =211
+        Size: =100
+        Text: =Text(CountRows('Cash Requisition Form Sharepoint'))
+        Width: =199
+        X: =242
+        Y: =210
+        ZIndex: =26
+
+    Button7_1 As button:
+        BorderColor: =ColorFade(Color.Green, -15%)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =233
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =250
+        X: =483
+        Y: =163
+        ZIndex: =27
+
+    Label13_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(106, 190, 40, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =93
+        Size: =16
+        Text: ="Approved requests"
+        Width: =250
+        X: =483
+        Y: =323
+        ZIndex: =28
+
+    Label7 As label:
+        Align: =Align.Center
+        Color: =RGBA(106, 190, 40, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =112
+        Size: =100
+        Text: |
+            =Text(CountRows(Filter('Cash Requisition Form Sharepoint', "Approved" in 'HR Status')))
+        Width: =118
+        X: =549
+        Y: =218
+        ZIndex: =29
+
+    Button7_4 As button:
+        Fill: =RGBA(106, 190, 40, 1)
+        Height: =306
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =250
+        X: =745
+        Y: =158
+        ZIndex: =30
+
+    Label13_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =83
+        Size: =16
+        Text: ="Rejected requests"
+        Width: =250
+        X: =742
+        Y: =394
+        ZIndex: =31
+
+    Label15 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =176
+        Size: =100
+        Text: |
+            =Text(CountRows(Filter('Cash Requisition Form Sharepoint', "Rejected" in 'HR Status' || "Rejected" in 'HOD Status')))
+        Width: =114
+        X: =825
+        Y: =213
+        ZIndex: =32
+
+    Button7_5 As button:
+        BorderColor: =ColorFade(Color.Green, -15%)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =301
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =250
+        X: =1010
+        Y: =163
+        ZIndex: =33
+
+    Label13_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(106, 190, 40, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =83
+        Size: =16
+        Text: ="Pending requests with HODs"
+        Width: =195
+        X: =1037
+        Y: =379
+        ZIndex: =34
+
+    Label15_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(106, 190, 40, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =129
+        Size: =100
+        Text: |
+            =Text(CountRows(Filter('Cash Requisition Form Sharepoint', IsBlank('HOD Status'))))
+        X: =1060
+        Y: =237
+        ZIndex: =35
+
+    Button7_6 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =233
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =250
+        X: =222
+        Y: =499
+        ZIndex: =36
+
+    Label13_4 As label:
+        Align: =Align.Center
+        Color: =RGBA(106, 190, 40, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =83
+        Size: =16
+        Text: ="Pending requests with HR"
+        Width: =195
+        X: =241
+        Y: =649
+        ZIndex: =37
+
+    Label15_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(106, 190, 40, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =116
+        Size: =100
+        Text: |
+            =Text(CountRows(Filter('Cash Requisition Form Sharepoint', "Approved" in 'HOD Status' && IsBlank('HR Status'))))
+        X: =267
+        Y: =533
+        ZIndex: =38
+
+    Button7_7 As button:
+        BorderColor: =ColorFade(Color.Green, -15%)
+        Color: =RGBA(99, 139, 44, 1)
+        Fill: =RGBA(106, 190, 40, 1)
+        Height: =319
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =250
+        X: =483
+        Y: =413
+        ZIndex: =39
+
+    Label13_5 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =83
+        Size: =16
+        Text: ="Pending requests with MD"
+        Width: =195
+        X: =508
+        Y: =631
+        ZIndex: =40
+
+    Label15_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =108
+        Size: =100
+        Text: =Text(CountRows(Filter('Cash Requisition Form Sharepoint','Amount in figures' >= 1000 && IsBlank('MD Status'))))
+        X: =525
+        Y: =488
+        ZIndex: =41
+
+    Button7_8 As button:
+        Fill: =RGBA(255, 0, 0, 1)
+        Height: =250
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =515
+        X: =745
+        Y: =482
+        ZIndex: =42
+
+    Label13_6 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =83
+        Size: =16
+        Text: ="Total Cost of Approved Requests"
+        Width: =379
+        X: =765
+        Y: =506
+        ZIndex: =43
+
+    Label16 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =204
+        Size: =55
+        Text: |-
+            ="GH¢ " & Text(Sum(Filter('Cash Requisition Form Sharepoint', "Approved" in 'HR Status'),'Amount in figures'),"#,###.00")
+        Width: =496
+        X: =736
+        Y: =553
+        ZIndex: =44
+
+    Button5_3 As button:
+        BorderThickness: =0
+        Color: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =50
+        OnSelect: =Navigate('Receipt Confirmation Screen')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =150
+        Y: =553
+        ZIndex: =45
+
+    Icon14 As icon.DocumentPDF:
+        Height: =25
+        Icon: =Icon.DocumentPDF
+        OnSelect: =Navigate('Receipt Confirmation Screen')
+        Width: =25
+        X: =11
+        Y: =564
+        ZIndex: =46
+
+    Label3_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(116, 116, 116, 1)
+        Height: =33
+        OnSelect: =Navigate('Receipt Confirmation Screen',ScreenTransition.Fade)
+        Size: =10
+        Text: ="Receipt"
+        Width: =58
+        X: =55
+        Y: =561
+        ZIndex: =47
+

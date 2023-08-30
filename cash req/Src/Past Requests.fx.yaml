@@ -1,0 +1,1059 @@
+"'Past Requests' As screen.'autoLayout_Sidebar_ver1.0'":
+
+    ScreenContainer4 As groupContainer.verticalAutoLayoutContainer:
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer4 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =2
+
+            LblAppName2_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(71, 71, 71, 1)
+                Fill: =RGBA(255, 255, 255, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =88
+                Size: =25
+                Text: ="Past Completed Request History"
+                Width: =Parent.Width
+                ZIndex: =1
+
+        BottomContainer4 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(245, 245, 245, 1)
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutGap: =16
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            ZIndex: =3
+
+            SidebarContainer4 As groupContainer.verticalAutoLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =3
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =4
+
+                "Gallery5_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                    BorderColor: =RGBA(128, 128, 128, 1)
+                    BorderThickness: =0.5
+                    DelayItemLoading: =true
+                    Fill: =RGBA(214, 223, 238, 1)
+                    Height: =680
+                    Items: |-
+                        =Filter(
+                            'Cash Requisition Form Sharepoint',
+                            'HR Status' = "Approved" Or 'HR Status' = "Rejected" Or 'HOD Status' = "Rejected" Or 'MD Status' = "Rejected" Or 'MD Status' = "Approved",
+                            'HOD/Proxy HOD email address'.Value = User().Email || 'Name of Employee' = User().FullName
+                        )
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =287
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplateFill: =If(ThisItem.IsSelected,Color.LightYellow)
+                    TemplatePadding: =0
+                    TemplateSize: =264
+                    Width: =1215
+                    X: =151
+                    Y: =88
+                    ZIndex: =1
+
+                    Title5_2 As label:
+                        Color: =RGBA(102, 102, 102, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Bold, FontWeight.Normal)
+                        Height: =24
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: =ThisItem.'Name of Employee'
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =277
+                        X: =9
+                        Y: =11
+                        ZIndex: =2
+
+                    NextArrow5_2 As icon.ChevronRight:
+                        AccessibleLabel: =Self.Tooltip
+                        Color: =RGBA(166, 166, 166, 1)
+                        Height: =50
+                        Icon: =Icon.ChevronRight
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =16
+                        PaddingLeft: =16
+                        PaddingRight: =16
+                        PaddingTop: =16
+                        Tooltip: ="View item details"
+                        Width: =50
+                        X: =342
+                        Y: =44
+                        ZIndex: =4
+
+                    Separator5_2 As rectangle:
+                        Fill: =RGBA(120, 120, 120, 1)
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                        ZIndex: =5
+
+                    Rectangle5_2 As rectangle:
+                        Height: =Parent.TemplateHeight - Separator5_2.Height
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =1
+                        ZIndex: =6
+
+                    Subtitle5_5 As label:
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =19
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.Date
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =83
+                        X: =294
+                        Y: =10
+                        ZIndex: =7
+
+                    Subtitle5_14 As label:
+                        Color: =RGBA(107, 106, 106, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =25
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =11
+                        Text: |-
+                            ="Department:   "&ThisItem.Department.Value
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =332
+                        X: =10
+                        Y: =41
+                        ZIndex: =11
+
+                    Subtitle5_27 As label:
+                        Align: =Align.Center
+                        Color: =RGBA(255, 255, 255, 1)
+                        Fill: |
+                            =If(
+                                ThisItem.'HR Status' = "Approved",
+                                Color.Green,
+                                Color.Red
+                            )
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =80
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =40
+                        Size: =18
+                        Text: |-
+                            =If(ThisItem.'Amount in figures'<1000,
+                            If(
+                                ThisItem.'HOD Status' = "Rejected",
+                                "Decision: " & ThisItem.'HOD Status',
+                                "Decision: " & ThisItem.'HR Status'
+                            ),"Decision: "&ThisItem.'MD Status'
+                            )
+                        Width: =356
+                        X: =10
+                        Y: =163
+                        ZIndex: =16
+
+                    Subtitle5_18 As label:
+                        Color: =RGBA(105, 105, 105, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =19
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: |-
+                            ="HOD:   "&ThisItem.'HOD Status'
+                        VerticalAlign: =VerticalAlign.Top
+                        Visible: =If(!IsBlank(ThisItem.'HOD Status'),true)
+                        Width: =356
+                        X: =10
+                        Y: =69
+                        ZIndex: =17
+
+                    Subtitle5_19 As label:
+                        Color: =RGBA(105, 105, 105, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =19
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: |-
+                            ="HR   :   "&ThisItem.'HR Status'
+                        VerticalAlign: =VerticalAlign.Top
+                        Visible: =If(!IsBlank(ThisItem.'HR Status'),true)
+                        Width: =356
+                        X: =10
+                        Y: =90
+                        ZIndex: =18
+
+                    Subtitle5_20 As label:
+                        Color: =RGBA(105, 105, 105, 1)
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =19
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: |-
+                            ="MD  :   "&ThisItem.'MD Status'
+                        VerticalAlign: =VerticalAlign.Top
+                        Visible: =If(!IsBlank(ThisItem.'MD Status'),true)
+                        Width: =356
+                        X: =10
+                        Y: =110
+                        ZIndex: =19
+
+            MainContainer4 As groupContainer.verticalAutoLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =7
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =5
+
+                Form5_3 As form:
+                    DataSource: ='Cash Requisition Form Sharepoint'
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =590
+                    Item: =Gallery5_2.Selected
+                    LayoutMinHeight: =250
+                    LayoutMinWidth: =400
+                    NumberOfColumns: =1
+                    Width: =582
+                    X: =784
+                    Y: =176
+                    ZIndex: =1
+
+                    "'HOD/Proxy HOD email address_DataCard6_3' As typedDataCard.comboBoxEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="HOD_x002f_ProxyHODemailaddress"
+                        Default: =ThisItem.'HOD/Proxy HOD email address'
+                        DisplayMode: =Parent.DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Cash Requisition Form Sharepoint'],DataSourceInfo.DisplayName,"HOD_x002f_ProxyHODemailaddress")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =false
+                        Update: =DataCardValue75_3.Selected
+                        Width: =580
+                        X: =0
+                        Y: =9
+                        ZIndex: =1
+
+                        DataCardKey77_3 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue75_3 As combobox:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            DefaultSelectedItems: =Parent.Default
+                            DisplayFields: =["Value"]
+                            DisplayMode: =Parent.DisplayMode
+                            Items: =Choices([@'Cash Requisition Form Sharepoint'].'HOD/Proxy HOD email address')
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 10, 0)
+                            SearchFields: =["Value"]
+                            SearchItems: =Choices('Cash Requisition Form Sharepoint'.'HOD/Proxy HOD email address',DataCardValue75_3.SearchText)
+                            SelectMultiple: =false
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey77_3.Y + DataCardKey77_3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage77_3 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue75_3.Y + DataCardValue75_3.Height
+                            ZIndex: =3
+
+                        StarVisible77_3 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey77_3.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey77_3.Y
+                            ZIndex: =4
+
+                    "'Name of Employee_DataCard5_3' As typedDataCard.textualEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="NameofEmployee"
+                        Default: =ThisItem.'Name of Employee'
+                        DisplayMode: =Parent.DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Cash Requisition Form Sharepoint'],DataSourceInfo.DisplayName,"NameofEmployee")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@'Cash Requisition Form Sharepoint'], DataSourceInfo.MaxLength, "NameofEmployee")
+                        Required: =false
+                        Update: =DataCardValue60_3.Text
+                        Width: =580
+                        X: =0
+                        Y: =0
+                        ZIndex: =21
+
+                        DataCardKey62_3 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue60_3 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            BorderThickness: =1
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =15
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey62_3.Y + DataCardKey62_3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage62_3 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue60_3.Y + DataCardValue60_3.Height
+                            ZIndex: =3
+
+                        StarVisible62_3 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey62_3.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey62_3.Y
+                            ZIndex: =4
+
+                    Date_DataCard5_3 As typedDataCard.dateEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Date"
+                        Default: =ThisItem.Date
+                        DisplayMode: =Parent.DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Cash Requisition Form Sharepoint'],DataSourceInfo.DisplayName,"Date")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =102
+                        Required: =false
+                        Update: =DataCardValue69_3.SelectedDate
+                        Width: =300
+                        X: =0
+                        Y: =1
+                        ZIndex: =21
+
+                        DataCardKey71_3 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue69_3 As datepicker:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            BorderThickness: =1
+                            DefaultDate: =Parent.Default
+                            DisplayMode: =Parent.DisplayMode
+                            EndYear: =Year(Today())+100
+                            IsEditable: =true
+                            PaddingBottom: =0
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 15)
+                            StartYear: =1899
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey71_3.Y + DataCardKey71_3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage71_3 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue69_3.Y + DataCardValue69_3.Height
+                            ZIndex: =3
+
+                        StarVisible71_3 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey71_3.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey71_3.Y
+                            ZIndex: =4
+
+                    Department_DataCard5_3 As typedDataCard.comboBoxEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Department"
+                        Default: =ThisItem.Department
+                        DisplayMode: =Parent.DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Cash Requisition Form Sharepoint'],DataSourceInfo.DisplayName,"Department")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =false
+                        Update: =DataCardValue64_3.Selected
+                        Width: =300
+                        X: =0
+                        Y: =2
+                        ZIndex: =21
+
+                        DataCardKey66_3 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue64_3 As combobox:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            BorderThickness: =1
+                            DefaultSelectedItems: =Parent.Default
+                            DisplayFields: =["Value"]
+                            DisplayMode: =Parent.DisplayMode
+                            Items: =Choices([@'Cash Requisition Form Sharepoint'].Department)
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 15)
+                            SearchFields: =["Value"]
+                            SearchItems: =Choices('Cash Requisition Form Sharepoint'.Department,DataCardValue64_3.SearchText)
+                            SelectMultiple: =false
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey66_3.Y + DataCardKey66_3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage66_3 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue64_3.Y + DataCardValue64_3.Height
+                            ZIndex: =3
+
+                        StarVisible66_3 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey66_3.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey66_3.Y
+                            ZIndex: =4
+
+                    "'Expense Category_DataCard5_3' As typedDataCard.comboBoxEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="ExpenseCategory"
+                        Default: =ThisItem.'Expense Category'
+                        DisplayMode: =Parent.DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Cash Requisition Form Sharepoint'],DataSourceInfo.DisplayName,"ExpenseCategory")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =false
+                        Update: =DataCardValue66_3.Selected
+                        Width: =300
+                        X: =0
+                        Y: =3
+                        ZIndex: =21
+
+                        DataCardKey68_3 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue66_3 As combobox:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            DefaultSelectedItems: =Parent.Default
+                            DisplayFields: =["Value"]
+                            DisplayMode: =Parent.DisplayMode
+                            Items: =Choices([@'Cash Requisition Form Sharepoint'].'Expense Category')
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 15)
+                            SearchFields: =["Value"]
+                            SearchItems: =Choices('Cash Requisition Form Sharepoint'.'Expense Category',DataCardValue66_3.SearchText)
+                            SelectMultiple: =false
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey68_3.Y + DataCardKey68_3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage68_3 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue66_3.Y + DataCardValue66_3.Height
+                            ZIndex: =3
+
+                        StarVisible68_3 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey68_3.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey68_3.Y
+                            ZIndex: =4
+
+                    Item_DataCard5_3 As typedDataCard.textualEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Item"
+                        Default: =ThisItem.Item
+                        DisplayMode: =Parent.DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Cash Requisition Form Sharepoint'],DataSourceInfo.DisplayName,"Item")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@'Cash Requisition Form Sharepoint'], DataSourceInfo.MaxLength, "Item")
+                        Required: =false
+                        Update: =DataCardValue61_3.Text
+                        Width: =550
+                        X: =0
+                        Y: =4
+                        ZIndex: =21
+
+                        DataCardKey63_3 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue61_3 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            BorderThickness: =1
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Height: =100
+                            MaxLength: =Parent.MaxLength
+                            Mode: =TextMode.MultiLine
+                            PaddingLeft: =15
+                            PaddingTop: =10
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey63_3.Y + DataCardKey63_3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage63_3 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue61_3.Y + DataCardValue61_3.Height
+                            ZIndex: =3
+
+                        StarVisible63_3 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey63_3.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey63_3.Y
+                            ZIndex: =4
+
+                    Quantity_DataCard5_3 As typedDataCard.numberEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Quantity"
+                        Default: =ThisItem.Quantity
+                        DisplayMode: =Parent.DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Cash Requisition Form Sharepoint'],DataSourceInfo.DisplayName,"Quantity")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =false
+                        Update: =Value(DataCardValue70_3.Text)
+                        Width: =300
+                        X: =0
+                        Y: =5
+                        ZIndex: =21
+
+                        DataCardKey72_3 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue70_3 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Format: =TextFormat.Number
+                            PaddingLeft: =15
+                            RadiusBottomLeft: =10
+                            RadiusBottomRight: =10
+                            RadiusTopLeft: =10
+                            RadiusTopRight: =10
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey72_3.Y + DataCardKey72_3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage72_3 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue70_3.Y + DataCardValue70_3.Height
+                            ZIndex: =3
+
+                        StarVisible72_3 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey72_3.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey72_3.Y
+                            ZIndex: =4
+
+                    "'Amount in figures_DataCard5_3' As typedDataCard.numberEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Amountinfigures"
+                        Default: =ThisItem.'Amount in figures'
+                        DisplayMode: =Parent.DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Cash Requisition Form Sharepoint'],DataSourceInfo.DisplayName,"Amountinfigures")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        Required: =false
+                        Update: =Value(DataCardValue62_3.Text)
+                        Width: =300
+                        X: =0
+                        Y: =6
+                        ZIndex: =21
+
+                        DataCardKey64_3 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue62_3 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Format: =TextFormat.Number
+                            PaddingLeft: =15
+                            RadiusBottomLeft: =10
+                            RadiusBottomRight: =10
+                            RadiusTopLeft: =10
+                            RadiusTopRight: =10
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey64_3.Y + DataCardKey64_3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage64_3 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue62_3.Y + DataCardValue62_3.Height
+                            ZIndex: =3
+
+                        StarVisible64_3 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey64_3.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey64_3.Y
+                            ZIndex: =4
+
+                    "'Amount in words_DataCard5_3' As typedDataCard.textualEditCard":
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Amountinwords"
+                        Default: =ThisItem.'Amount in words'
+                        DisplayMode: =Parent.DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Cash Requisition Form Sharepoint'],DataSourceInfo.DisplayName,"Amountinwords")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@'Cash Requisition Form Sharepoint'], DataSourceInfo.MaxLength, "Amountinwords")
+                        Required: =false
+                        Update: =DataCardValue63_3.Text
+                        Width: =500
+                        X: =0
+                        Y: =7
+                        ZIndex: =21
+
+                        DataCardKey65_3 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue63_3 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            Height: =50
+                            MaxLength: =Parent.MaxLength
+                            Mode: =TextMode.MultiLine
+                            PaddingLeft: =15
+                            PaddingTop: =10
+                            RadiusBottomLeft: =10
+                            RadiusBottomRight: =10
+                            RadiusTopLeft: =10
+                            RadiusTopRight: =10
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey65_3.Y + DataCardKey65_3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage65_3 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue63_3.Y + DataCardValue63_3.Height
+                            ZIndex: =3
+
+                        StarVisible65_3 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey65_3.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey65_3.Y
+                            ZIndex: =4
+
+                    Status_DataCard4_3 As typedDataCard.textualEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="Status"
+                        Default: =ThisItem.'HOD Status'
+                        DisplayMode: =Parent.DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Cash Requisition Form Sharepoint'],DataSourceInfo.DisplayName,"Status")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =50
+                        MaxLength: =DataSourceInfo([@'Cash Requisition Form Sharepoint'], DataSourceInfo.MaxLength, "Status")
+                        Required: =false
+                        Update: =DataCardValue73_3.Text
+                        Width: =300
+                        X: =0
+                        Y: =8
+                        ZIndex: =21
+
+                        DataCardKey75_3 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue73_3 As text:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            BorderThickness: =1
+                            Default: =Parent.Default
+                            DelayOutput: =true
+                            DisplayMode: =Parent.DisplayMode
+                            MaxLength: =Parent.MaxLength
+                            PaddingLeft: =10
+                            RadiusBottomLeft: =10
+                            RadiusBottomRight: =10
+                            RadiusTopLeft: =10
+                            RadiusTopRight: =10
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey75_3.Y + DataCardKey75_3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage75_3 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue73_3.Y + DataCardValue73_3.Height
+                            ZIndex: =3
+
+                        StarVisible75_3 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey75_3.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey75_3.Y
+                            ZIndex: =4
+
+                    Attachments_DataCard5_3 As typedDataCard.attachmentsEditCard:
+                        BorderStyle: =BorderStyle.Solid
+                        DataField: ="{Attachments}"
+                        Default: =ThisItem.Attachments
+                        DisplayMode: =Parent.DisplayMode.Disabled
+                        DisplayName: =DataSourceInfo([@'Cash Requisition Form Sharepoint'],DataSourceInfo.DisplayName,"{Attachments}")
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =262
+                        Required: =false
+                        Update: =DataCardValue74_3.Attachments
+                        Width: =582
+                        X: =0
+                        Y: =10
+                        ZIndex: =21
+
+                        DataCardKey76_3 As label:
+                            AutoHeight: =true
+                            Height: =34
+                            Text: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            Wrap: =false
+                            X: =30
+                            Y: =10
+                            ZIndex: =1
+
+                        DataCardValue74_3 As attachments:
+                            BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                            DisplayMode: =DisplayMode.Disabled
+                            Height: =183
+                            IsInDataCard: =true
+                            Items: =Parent.Default
+                            PaddingBottom: =5
+                            PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Tooltip: =Parent.DisplayName
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardKey76_3.Y + DataCardKey76_3.Height + 5
+                            ZIndex: =2
+
+                        ErrorMessage76_3 As label:
+                            AutoHeight: =true
+                            Height: =10
+                            Live: =Live.Assertive
+                            PaddingBottom: =0
+                            PaddingLeft: =0
+                            PaddingRight: =0
+                            PaddingTop: =0
+                            Text: =Parent.Error
+                            Visible: =Parent.DisplayMode=DisplayMode.Edit
+                            Width: =Parent.Width - 60
+                            X: =30
+                            Y: =DataCardValue74_3.Y + DataCardValue74_3.Height
+                            ZIndex: =3
+
+                        StarVisible76_3 As label:
+                            Align: =Align.Center
+                            Height: =DataCardKey76_3.Height
+                            Text: ="*"
+                            Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                            Width: =30
+                            Wrap: =false
+                            Y: =DataCardKey76_3.Y
+                            ZIndex: =4
+
+    Icon5 As icon.ArrowLeft:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Navigate('New Request Screen')
+        Width: =40
+        X: =40
+        Y: =22
+        ZIndex: =2
+
+    Image4 As image:
+        Height: =64
+        Image: =images
+        X: =1254
+        Y: =22
+        ZIndex: =4
+
+    Image8 As image:
+        Image: =images
+        X: =1212
+        Y: =126
+        ZIndex: =5
+
+    Icon6 As icon.ArrowLeft:
+        Color: =RGBA(0, 0, 0, 1)
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Navigate('New Request Screen')
+        Width: =39
+        X: =33
+        Y: =24
+        ZIndex: =6
+

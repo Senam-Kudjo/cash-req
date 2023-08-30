@@ -1,0 +1,477 @@
+"'Receipt Confirmation Screen' As screen":
+
+    "Gallery5_5 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =0.5
+        DelayItemLoading: =true
+        Fill: =RGBA(214, 223, 238, 1)
+        Height: =710
+        Items: |+
+            =Sort(
+            Filter(
+                'Cash Requisition Form Sharepoint',
+                If('Amount in figures'<999,
+                'HR Status' = "Approved", 'MD Status' = "Approved"
+            ),  StartsWith(Item,TextInput1_1.Text) Or StartsWith('Name of Employee',TextInput1_1.Text)
+            ),Date,SortOrder.Descending
+            )
+            
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =
+        TemplateFill: =If(ThisItem.IsSelected,Color.LightYellow)
+        TemplatePadding: =0
+        TemplateSize: =135
+        Width: =404
+        Y: =57
+        ZIndex: =1
+
+        Title5_5 As label:
+            Color: =RGBA(102, 102, 102, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Bold, FontWeight.Normal)
+            Height: =24
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.'Name of Employee'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =277
+            X: =9
+            Y: =11
+            ZIndex: =2
+
+        NextArrow5_5 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =342
+            Y: =44
+            ZIndex: =4
+
+        Separator5_5 As rectangle:
+            Fill: =RGBA(120, 120, 120, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle5_5 As rectangle:
+            Height: =Parent.TemplateHeight - Separator5_5.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =1
+            ZIndex: =6
+
+        Subtitle5_8 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =19
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Date
+            VerticalAlign: =VerticalAlign.Top
+            Width: =83
+            X: =294
+            Y: =10
+            ZIndex: =7
+
+        Subtitle5_17 As label:
+            Color: =RGBA(107, 106, 106, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: |-
+                ="Department:   "&ThisItem.Department.Value
+            VerticalAlign: =VerticalAlign.Top
+            Width: =332
+            X: =10
+            Y: =35
+            ZIndex: =11
+
+        Subtitle5_33 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: |
+                =If(
+                    ThisItem.'HR Status' = "Approved",
+                    Color.Green,
+                    Color.Red
+                )
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =48
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: ="Approved"
+            Width: =165
+            X: =185
+            Y: =73
+            ZIndex: =16
+
+        Subtitle5_30 As label:
+            Color: =RGBA(105, 105, 105, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =19
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="HOD:   "&ThisItem.'HOD Status'
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =If(!IsBlank(ThisItem.'HOD Status'),true)
+            Width: =356
+            X: =10
+            Y: =60
+            ZIndex: =17
+
+        Subtitle5_31 As label:
+            Color: =RGBA(105, 105, 105, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =19
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="HR   :   "&ThisItem.'HR Status'
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =If(!IsBlank(ThisItem.'HR Status'),true)
+            Width: =200
+            X: =10
+            Y: =80
+            ZIndex: =18
+
+        Subtitle5_32 As label:
+            Color: =RGBA(105, 105, 105, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =19
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="MD  :   "&ThisItem.'MD Status'
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =If(!IsBlank(ThisItem.'MD Status'),true)
+            Width: =356
+            X: =10
+            Y: =100
+            ZIndex: =19
+
+    pdfPane_1 As groupContainer.manualLayoutContainer:
+        Height: =768
+        Width: =962
+        X: =404
+        ZIndex: =9
+
+        Image2_1 As image:
+            Height: =84
+            Image: =DD
+            Width: =130
+            X: =382
+            ZIndex: =1
+
+        Label4 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =36
+            Size: =15
+            Text: ="Cash Requisition Receipt Confirmation"
+            Width: =497
+            X: =283
+            Y: =111
+            ZIndex: =4
+
+        Label10 As label:
+            Height: =42
+            Text: |-
+                ="Name of Employee: "&Gallery5_5.Selected.'Name of Employee'
+            Width: =444
+            X: =26
+            Y: =152
+            ZIndex: =5
+
+        Label10_1 As label:
+            Height: =28
+            Text: |-
+                ="Date of Request: "&Gallery5_5.Selected.Date
+            Width: =256
+            X: =456
+            Y: =158
+            ZIndex: =6
+
+        Label10_2 As label:
+            Height: =37
+            Text: |-
+                ="Item Description: "&Gallery5_5.Selected.Item
+            Width: =748
+            X: =26
+            Y: =184
+            ZIndex: =7
+
+        Label10_3 As label:
+            Height: =25
+            Text: |-
+                ="Quantity of Item: "&Gallery5_5.Selected.Quantity
+            Width: =284
+            X: =26
+            Y: =221
+            ZIndex: =8
+
+        Label10_4 As label:
+            Height: =21
+            Text: |-
+                =Text(Gallery5_5.Selected.'Amount in figures',"#,###.00")
+            Width: =98
+            X: =136
+            Y: =254
+            ZIndex: =9
+
+        Label11 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =35
+            Size: =14
+            Text: ="Head of Department"
+            Width: =336
+            X: =26
+            Y: =302
+            ZIndex: =10
+
+        Label10_5 As label:
+            Height: =39
+            Text: |-
+                ="Department: "&Gallery5_5.Selected.Department.Value
+            Width: =424
+            X: =26
+            Y: =326
+            ZIndex: =11
+
+        Label10_6 As label:
+            Height: =28
+            Text: |
+                =Switch(
+                    Gallery5_5.Selected.'HOD/Proxy HOD email address'.Value,
+                    "senamkodjo.humado@dimensiondata.com", "Senam Kudjo Humado: Approved",
+                    "maurice.fouillard@dimensiondata.com", "Maurice Fouillard: Approved",
+                    "dorcas.baah@dimensiondata.com", "Dorcas Baah: Approved",
+                    "peterdavid.kotoko@dimensiondata.com","Peter David Kotoko: Approved",
+                    "christel.derban@dimensiondata.com","Christel Derban: Approved",
+                    "EmmanuelPaul.Nimfah-Wilkinson@dimensiondata.com","Emmanuel Paul Nimfah-Wilkinson: Approved",
+                    "randy.xorse@dimensiondata.com","Randy Xorse: Approved",
+                    "robinedem.amedzo@dimensiondata.com","Robin Edem Amedzo: Approved",
+                    "default value"
+                )
+            Width: =618
+            X: =26
+            Y: =360
+            ZIndex: =12
+
+        Label10_7 As label:
+            Height: =25
+            Text: |-
+                ="Date of Approval: "&Gallery5_5.Selected.'Date of HOD Approval'
+            Width: =284
+            X: =456
+            Y: =326
+            ZIndex: =13
+
+        Label11_1 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =14
+            Text: ="Human Resource Manager"
+            Width: =294
+            X: =26
+            Y: =404
+            ZIndex: =14
+
+        Label10_8 As label:
+            Height: =36
+            Text: |-
+                ="Elizabeth Amponsah: "& Gallery5_5.Selected.'HR Status'
+            Width: =294
+            X: =26
+            Y: =432
+            ZIndex: =15
+
+        Label10_9 As label:
+            Height: =25
+            Text: |-
+                ="Date of Approval: "&Gallery5_5.Selected.'Date of HR Approval'
+            Width: =284
+            X: =456
+            Y: =438
+            ZIndex: =16
+
+        Label11_2 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =14
+            Text: ="Managing Director"
+            Width: =294
+            X: =26
+            Y: =488
+            ZIndex: =17
+
+        Label10_10 As label:
+            Height: =36
+            Text: |-
+                ="Yvette Adounvo Atekpe: "& Gallery5_5.Selected.'MD Status'
+            Width: =294
+            X: =26
+            Y: =516
+            ZIndex: =18
+
+        Label10_11 As label:
+            Height: =19
+            Text: |-
+                ="Date of Approval: "&Gallery5_5.Selected.'Date of MD Approval'
+            Width: =289
+            X: =456
+            Y: =522
+            ZIndex: =19
+
+        Label11_3 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =28
+            Size: =14
+            Text: ="Cash Recipient Signature"
+            Width: =352
+            X: =30
+            Y: =604
+            ZIndex: =20
+
+        Rectangle3 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(0, 0, 0, 0)
+            Width: =303
+            X: =31
+            Y: =638
+            ZIndex: =21
+
+        Label10_12 As label:
+            Height: =41
+            Text: |-
+                ="Cost of Item:"
+            Width: =120
+            X: =26
+            Y: =245
+            ZIndex: =22
+
+        Rectangle4 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =2
+            Width: =260
+            X: =460
+            Y: =736
+            ZIndex: =23
+
+        Rectangle4_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =2
+            X: =770
+            Y: =738
+            ZIndex: =24
+
+        Label14_1 As label:
+            FontWeight: =FontWeight.Semibold
+            Text: ="Date"
+            Width: =88
+            X: =770
+            Y: =650
+            ZIndex: =25
+
+        Label14_2 As label:
+            FontWeight: =FontWeight.Semibold
+            Text: ="Recipient Name"
+            Width: =174
+            X: =460
+            Y: =650
+            ZIndex: =26
+
+    Icon11_1 As icon.DocumentPDF:
+        Color: =RGBA(151, 0, 0, 1)
+        Height: =50
+        Icon: =Icon.DocumentPDF
+        OnSelect: |-
+            =Set(varPdf,PDF(pdfPane_1,{DPI:70,ExpandContainers: true,Size:PaperSize.A3}))
+        Width: =50
+        X: =1306
+        Y: =10
+        ZIndex: =10
+
+    TextInput1_1 As text:
+        BorderColor: =RGBA(202, 202, 202, 1)
+        BorderThickness: =0.5
+        Default: =
+        Height: =57
+        HintText: ="Search Employee Name or Item"
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =355
+        X: =44
+        ZIndex: =11
+
+    Icon12_1 As icon.Search:
+        Color: =RGBA(116, 116, 116, 1)
+        Height: =40
+        Icon: =Icon.Search
+        Width: =40
+        X: =350
+        Y: =10
+        ZIndex: =12
+
+    Arrow1_1 As arrow.backArrow:
+        Height: =35
+        OnSelect: =Navigate('New Request Screen')
+        Width: =35
+        Y: =10
+        ZIndex: =13
+
+    attachment_2 As attachments:
+        BorderColor: =RGBA(51, 51, 51, 1)
+        DisplayMode: =DisplayMode.View
+        Height: =43
+        IsInDataCard: =true
+        Items: |-
+            ={Name: Gallery5_5.Selected.'Name of Employee'&"'s_request.pdf",Value:varPdf}
+        PaddingBottom: =5
+        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 10, 0)
+        PaddingRight: =5
+        PaddingTop: =5
+        Tooltip: =
+        Width: =321
+        X: =975
+        Y: =10
+        ZIndex: =14
+
