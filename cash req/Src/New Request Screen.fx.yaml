@@ -298,6 +298,7 @@
                 Height: =50
                 InputTextPlaceholder: ="Pick Your HOD/Proxy HOD"
                 Items: =Choices([@'Cash Requisition Form Sharepoint'].'HOD/Proxy HOD email address')
+                OnChange: =If(ThisItem.Department.Value = "Technology","senamkodjo.humado@dimensiondata.com",false)
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 15, 0)
                 SearchFields: =["Value"]
                 SearchItems: =Choices('Cash Requisition Form Sharepoint'.'HOD/Proxy HOD email address',approverOne.SearchText)
